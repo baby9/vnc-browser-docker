@@ -21,3 +21,6 @@ Installed with the following components:
 - Run command with mapping to local port `5901` (vnc protocol) and `6901` (vnc web access) with specific resolution:
 
       docker run -d -p 5901:5901 -p 6901:6901 -e RESOLUTION=1600x1200 zenexas/vnc-browser
+
+## Reference
+- [tiny-remote-desktop](https://github.com/soffchen/tiny-remote-desktop)
