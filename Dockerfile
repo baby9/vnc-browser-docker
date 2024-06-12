@@ -1,10 +1,8 @@
-FROM alpine:edge
+FROM alpine:3.19
 
-RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-RUN apk update
-RUN apk add --no-cache xvfb x11vnc fluxbox supervisor xterm bash firefox wqy-zenhei novnc websockify
-
-RUN ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html
+RUN apk update && \
+    apk add --no-cache tzdata xvfb x11vnc fluxbox supervisor xterm bash chromium wqy-zenhei novnc websockify && \
+    ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html
 
 ADD supervisord.conf /etc/supervisord.conf
 ADD menu /root/.fluxbox/menu
